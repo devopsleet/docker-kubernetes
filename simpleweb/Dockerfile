@@ -4,7 +4,7 @@ FROM node:14-alpine
 # Install dependencies
 COPY ./ ./
 
-RUN npm Install
+RUN npm install
 
 # Default command
 CMD ["npm","start"]
