@@ -1,5 +1,5 @@
 # Use and existing docker image
-FROM alpine
+FROM alpine:latest
 # Download and install a dependency
 RUN apk add --update redis
 RUN apk add --update gcc
