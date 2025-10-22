@@ -1,4 +1,4 @@
-FROM node:25-alpine3.21
+FROM node:14-alpine
 
 #RUN apk add --update npm
 
