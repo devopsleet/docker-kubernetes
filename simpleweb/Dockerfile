@@ -1,4 +1,6 @@
-FROM alpine
+FROM nodejs:latest
+
+RUN apk add --update npm
 
 RUN npm install
 
