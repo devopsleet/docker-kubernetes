@@ -1,4 +1,4 @@
-FROM nodejs:latest
+FROM nodejs:25-alpine3.21
 
 RUN apk add --update npm
 
