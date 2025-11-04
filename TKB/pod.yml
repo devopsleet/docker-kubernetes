@@ -14,4 +14,4 @@ spec:
       resources:
         linits:
           memory: 128Mi
-          cpu: 0.5
+          cpu: 1
