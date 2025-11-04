@@ -12,6 +12,6 @@ spec:
       ports:
         - containerPort:8080
       resources:
-        linits:
+        limits:
           memory: 128Mi
-          cpu: 1
+          cpu: 0.5
