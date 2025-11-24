@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: hello-deploy
 spec:
-  replicas: 10
+  replicas: 4
   selector:
     matchLabels:
       app: hello-world
@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: hello-pod
-        image: nigelpoulton/k8sbook:1.0
+        image: nigelpoulton/k8sbook:2.0
         ports:
         - containerPort: 8080
