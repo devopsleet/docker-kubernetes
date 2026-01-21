@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: initpod
+  labels:
+    apps: initializer
+spec:
+  initContainers:
+  - name: init-ctr
+    image: busybox:1.28.4
+    command: [sh -usr "entry point" do echo]
