@@ -1,19 +1,11 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: svc-test
+  name: svc-lb
 spec:
-  replicas: 10
+  type: LoadBalancer
+  ports:
+  - port: 9000
+    targetPort: 8080
   selector:
-    matchLabels:
-      chapter: services
-  template:
-    metadata:
-      labels:
-        chapter: services
-    spec:
-      containers:
-      - name: hello-ctr
-        image: nigelpoulton/k8sbook:1.0
-        ports:
-        - containerPort: 8080
+    chapter: services
