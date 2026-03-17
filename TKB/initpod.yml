@@ -1,11 +1,21 @@
-apiVersion: v1
 kind: Pod
+apiVersion: v1
 metadata:
-  name: initpod
+  name: hello-initpod
   labels:
-    apps: initializer
+    apps: init-app
 spec:
   initContainers:
-  - name: init-ctr
-    image: busybox:1.28.4
-    command: [sh -usr "entry point" do echo]
+    - name: init-container
+      image: busybox:1.28.4
+      command:
+        [
+          "sh",
+          "-c",
+          "until nsloop k8sbook; do echo waiting for sec; sleep 1; done; echo service found!",
+        ]
+  containers:
+    - name: main-ctr
+      image: nigelpoulton/web-app:1.0
+      ports:
+        - containerPort: 8080
