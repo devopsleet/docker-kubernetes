@@ -5,8 +5,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 8080
-    targetPort: 8080
+    - port: 8080
+      targetPort: 8080
   selector:
     env: shield
 ---
@@ -17,8 +17,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 8080
-    targetPort: 8080
+    - port: 8080
+      targetPort: 8080
   selector:
     env: hydra
 ---
@@ -30,11 +30,11 @@ metadata:
     env: shield
 spec:
   containers:
-  - image: nigelpoulton/k8sbook:shield-ingress
-    name: shield-ctr
-    ports:
-    - containerPort: 8080
-    imagePullPolicy: Always
+    - image: nigelpoulton/k8sbook:shield-ingress
+      name: shield-ctr
+      ports:
+        - containerPort: 8080
+      imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Pod
@@ -44,8 +44,8 @@ metadata:
     env: hydra
 spec:
   containers:
-  - image: nigelpoulton/k8sbook:hydra-ingress
-    name: hydra-ctr
-    ports:
-    - containerPort: 8080
-    imagePullPolicy: Always
+    - image: nigelpoulton/k8sbook:hydra-ingress
+      name: hydra-ctr
+      ports:
+        - containerPort: 8080
+      imagePullPolicy: Always
